@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    .img-fluid {
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .mt-4 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  </style>
+  <title>Error Page</title>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 text-center mt-5">
+      <img th:src="${errorImage}" alt="Error Image" class="img-fluid">
+      <h2 class="mt-4">Error Occurred</h2>
+      <p th:text="${errorMessage}"></p>
+      <a th:if="${buttonLink}" th:href="${buttonLink}" class="btn btn-primary mt-4">Return</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
